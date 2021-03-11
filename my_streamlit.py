@@ -2,10 +2,8 @@ import streamlit as st
 import pandas as pd 
 import numpy as np 
 
-
-
 option = st.sidebar.selectbox(
-    'Silakan pilih',
+    'Silakan pilih:',
     ('Home','Dataframe','Chart')
 )
 
@@ -20,7 +18,6 @@ elif option == 'Dataframe':
     df
 elif option == 'Chart':
     st.write("""## Draw Charts""")
-
     chart_data = pd.DataFrame(
         np.random.randn(20,2),
         columns=['a','b']
@@ -29,7 +26,6 @@ elif option == 'Chart':
     st.line_chart(chart_data)
 elif option == 'Map':
     st.write("""## Plot a map""")
-
     map_data = pd.DataFrame(
         np.random.randn(100,2) / [20,20] + [37.76, -122.4],
         columns=['lat','lon']
